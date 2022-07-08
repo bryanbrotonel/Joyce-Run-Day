@@ -17,7 +17,7 @@ function Navbar() {
 
   useEffect(() => {
     function checkDesktop() {
-      setDesktop(window.innerWidth > 992);
+      setDesktop(window.innerWidth > 768);
     }
 
     window.addEventListener('resize', checkDesktop);
@@ -31,10 +31,10 @@ function Navbar() {
 
   const links = [
     ['/', 'Joyce Run Day'],
-    ['/about', 'About'],
-    ['/events', 'Events'],
-    ['/gear', 'Gear'],
-    ['/register', 'Register'],
+    ['/#about', 'About'],
+    ['/#events', 'Events'],
+    ['/#gear', 'Gear'],
+    ['/#register', 'Register'],
   ];
   return (
     <NavContainer>

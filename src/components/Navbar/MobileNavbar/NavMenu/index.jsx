@@ -47,7 +47,7 @@ const NavLinkWrapper = styled.ul`
 
 const Link = styled(NavLink)`
   font-family: var(--font-secondary);
-  font-size: var(--text-xxxl);
+  font-size: var(--text-xl);
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
@@ -64,6 +64,14 @@ const FooterTitle = styled.h3`
 const FooterSubtitle = styled.p`
   margin: 0;
 `
+
+const RegisterButton = styled.button`
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5em 1em;
+`;
 
 function NavMenu(props) {
   const links = props.links;

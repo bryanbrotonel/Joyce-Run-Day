@@ -25,11 +25,12 @@ const Link = styled(NavLink)`
 
   font-family: var(--font-secondary);
   font-weight: bold;
-  color: var(--colour-black);
+  color: var(--colour-darkGrey);
 
   transition: 0.2s;
 
   &.homeLink {
+    color: var(--colour-primary);
     font-family: var(--font-primary);
     font-size: var(--text-lg);
   }
@@ -39,11 +40,25 @@ const Link = styled(NavLink)`
   }
 `;
 
+const RegisterButton = styled.button`
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
+
+  font-size: inherit;
+
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5em 1em;
+`;
+
 function DesktopNavbar(props) {
   const { links } = props;
 
   // Remove home page link and assign to variable
   const home = links.shift();
+
+  // Remove register page and assign to variable
+  const register = links.pop();
 
   // Remaining pages
   const pages = links;
@@ -64,6 +79,9 @@ function DesktopNavbar(props) {
             </Link>
           );
         })}
+        <Link to={register[0]}>
+          <RegisterButton>{register[1]}</RegisterButton>
+        </Link>
       </PagesWrapper>
     </NavWrapper>
   );
