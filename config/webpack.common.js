@@ -32,7 +32,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'New New',
+      title: 'Joyce Run Day',
       template: './resources/index.html',
       filename: './index.html',
       favicon: './src/static/assets/images/favicon.svg',
