@@ -1,6 +1,7 @@
 import React from 'react';
-
 import styled from 'styled-components';
+
+import HomeHero from './HomeHero';
 
 const HomeContainer = styled.div`
   & > div {
@@ -15,14 +16,16 @@ const HomeContainer = styled.div`
 
 function Home() {
   return (
-    <HomeContainer className="container">
-      <h1>Hello World</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
-        architecto nesciunt veniam hic quod cum? Ducimus expedita ipsum minus
-        ratione, laborum, iure cupiditate aliquid laudantium eos repellat,
-        molestias maiores quis?
-      </p>
+    <HomeContainer>
+      <HomeHero />
+      <div className="container">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
+          architecto nesciunt veniam hic quod cum? Ducimus expedita ipsum minus
+          ratione, laborum, iure cupiditate aliquid laudantium eos repellat,
+          molestias maiores quis?
+        </p>
+      </div>
     </HomeContainer>
   );
 }

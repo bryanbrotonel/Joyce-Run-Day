@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import NavMenu from './NavMenu';
 import { NavLink } from 'react-router-dom';
 
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,8 +21,9 @@ const Link = styled(NavLink)`
 `;
 
 const Title = styled.h3`
+  color: var(--colour-primary);
   margin: 0;
-  text-decoration:none;
+  text-decoration: none;
 `;
 
 function MobileNavbar(props) {

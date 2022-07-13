@@ -5,8 +5,12 @@ import MobileNavbar from './MobileNavbar';
 
 const NavContainer = styled.div`
   height: 78px;
-  position: relative;
-  z-index: 2;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+
+  background: var(--colour-white);
+
   display: flex;
   align-items: center;
   justify-content: center;
