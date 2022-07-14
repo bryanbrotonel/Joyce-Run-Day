@@ -1,83 +1,142 @@
 import React from 'react';
-
 import styled from 'styled-components';
 
-const FooterContainer = styled.div`
-  background-color: var(--colour-primary);
-  color: var(--colour-white);
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faInstagram,
+  faFacebook,
+  faTwitter,
+  faYoutube,
+  faTiktok,
+} from '@fortawesome/free-brands-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
+const FooterWrapper = styled.div`
   padding: 4rem 0;
-  @media (min-width: 768px) {
-    padding: 0;
-  }
-`;
+  padding-left: 2rem;
 
-const FooterRow = styled.div`
-  width: 100%;
-
-  height: 100%;
-  display: flex;
-  gap: 4rem;
-
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--colour-lightGrey);
+  color: var(--colour-darkGrey);
 
   @media (min-width: 768px) {
-    gap: 0rem;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    padding-left: 0rem;
   }
 `;
 
 const FooterContent = styled.div`
-  display: grid;
-  gap: 2rem;
-
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding-bottom: 8rem;
 
   @media (min-width: 768px) {
-    text-align: left;
-    padding: 4rem 0;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10em;
   }
 `;
 
 const FooterTitle = styled.h1`
-  font-size: var(--text-xxxl);
+  color: var(--colour-primary);
   font-weight: bold;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0.5em;
 `;
 
-const Copyright = styled.span`
-  font-size: var(--text-xs);
-  @media (min-width: 768px) {
-    font-size: var(--text-sm);
+const FooterSubtitle = styled(FooterTitle)`
+  font-family: var(--font-secondary);
+  font-size: var(--text-md);
+  color: inherit;
+`;
+
+const FooterAddress = styled.span`
+  font-size: inherit;
+`;
+
+const FooterLinks = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li:hover {
+    opacity: 0.6;
   }
 `;
 
-function footer() {
+const SocialLinks = styled.div`
+  display: flex;
+  gap: 1em;
+
+  svg:hover {
+    opacity: 0.6;
+  }
+`;
+
+const CreditsSection = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+  }
+`;
+
+const CreditLink = styled.a`
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.6;
+  }
+`;
+
+function Footer() {
   return (
-    <FooterContainer>
-      <FooterRow>
-        <FooterContent>
-          <FooterTitle>React Starter Template</FooterTitle>
-          <Copyright>
-            &#169; {new Date().getFullYear()}. All Rights Reserved | Vancouver,
-            BC
-          </Copyright>
-        </FooterContent>
+    <FooterWrapper>
+      <FooterContent>
         <div>
-          <ul>
-            <li>links</li>
-            <li>links</li>
-            <li>links</li>
-            <li>links</li>
-            <li>links</li>
-          </ul>
+          <FooterTitle>Joyce Run Day</FooterTitle>
+          <FooterAddress>
+            8822 Euclid Ave.
+            <br />
+            Vancouver, BC V5R 3M5
+          </FooterAddress>
         </div>
-      </FooterRow>
-    </FooterContainer>
+        <div>
+          <FooterSubtitle>Quicklinks</FooterSubtitle>
+          <FooterLinks>
+            <li>About</li>
+            <li>Events</li>
+            <li>Gear</li>
+            <li>Register</li>
+          </FooterLinks>
+        </div>
+        <div>
+          <FooterSubtitle>Follow Us</FooterSubtitle>
+          <SocialLinks>
+            <FontAwesomeIcon icon={faInstagram} size="xl" />
+            <FontAwesomeIcon icon={faTwitter} size="xl" />
+            <FontAwesomeIcon icon={faFacebook} size="xl" />
+            <FontAwesomeIcon icon={faYoutube} size="xl" />
+            <FontAwesomeIcon icon={faTiktok} size="xl" />
+          </SocialLinks>
+        </div>
+      </FooterContent>
+      <CreditsSection>
+        <span>
+          Made with <FontAwesomeIcon icon={faHeart} size="sm" color="#F48C06" />
+          &#160;by&#160;
+          <CreditLink href="https://bryanbrotonel.live/">Bryan</CreditLink>
+        </span>
+        <span>
+          &#169; {new Date().getFullYear()}. All Rights Reserved | Vancouver, BC
+        </span>
+      </CreditsSection>
+    </FooterWrapper>
   );
 }
 
-export default footer;
+export default Footer;
