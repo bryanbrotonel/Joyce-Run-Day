@@ -2,22 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 import HomeHero from './HomeHero';
-
-const HomeContainer = styled.div`
-  & > div {
-    margin-bottom: 5rem;
-  }
-  @media (min-width: 768px) {
-    & > div {
-      margin-bottom: 12rem;
-    }
-  }
-`;
+import CountDown from './CountDown';
 
 function Home() {
   return (
-    <HomeContainer>
+    <div>
       <HomeHero />
+      <CountDown />
       <div className="container">
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
@@ -26,7 +17,7 @@ function Home() {
           molestias maiores quis?
         </p>
       </div>
-    </HomeContainer>
+    </div>
   );
 }
 
