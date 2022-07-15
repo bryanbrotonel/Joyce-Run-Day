@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import HomeHero from './HomeHero';
 import CountDown from './CountDown';
 import AboutSection from './AboutSection';
+import PartnersSection from './PartnersSection';
 
 function Home() {
   return (
@@ -11,6 +11,7 @@ function Home() {
       <HomeHero />
       <CountDown />
       <AboutSection />
+      <PartnersSection />
     </div>
   );
 }
