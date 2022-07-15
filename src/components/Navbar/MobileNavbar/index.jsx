@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import NavMenu from './NavMenu';
 import { NavLink } from 'react-router-dom';
@@ -28,6 +28,14 @@ const Title = styled.h3`
 
 function MobileNavbar(props) {
   const [toggleMenu, setToggleMenu] = useState(false);
+
+  useEffect(() => {
+    if (toggleMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [toggleMenu]);
 
   return (
     <React.Fragment>
