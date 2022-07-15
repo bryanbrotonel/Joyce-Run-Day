@@ -17,8 +17,6 @@ const Menu = styled.div`
 
   transform: ${(props) => (props.display ? 'none' : 'translateX(100%)')};
   transition: 0.5s;
-
-  z-index: 1;
 `;
 
 const MenuContainer = styled.div`

@@ -7,6 +7,7 @@ const NavContainer = styled.div`
   height: 78px;
   position: -webkit-sticky; /* Safari */
   position: sticky;
+  z-index: 10;
   top: 0;
 
   background: var(--colour-white);
