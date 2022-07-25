@@ -38,12 +38,21 @@ const TimerRow = styled.div`
 `;
 
 function CountDown() {
+  var todaysDate = new Date();
   var targetDate = new Date('Jul 11, 1998'); // Set target date
-  targetDate.setFullYear(new Date().getFullYear() + 1); // Set target year to next year
+
+  if (
+    todaysDate.getMonth() <= targetDate.getMonth() &&
+    todaysDate.getDate() < targetDate.getDate()
+  ) {
+    targetDate.setFullYear(todaysDate.getFullYear()); // Set target year to current year
+  } else {
+    targetDate.setFullYear(todaysDate.getFullYear() + 1); // Set target year to next year
+  }
   var countDownDate = targetDate.getTime(); // Get target time
 
   const [countDown, setCountDown] = useState(
-    countDownDate - new Date().getTime()
+    countDownDate - todaysDate.getTime()
   );
 
   useEffect(() => {
@@ -65,7 +74,7 @@ function CountDown() {
   return (
     <CountDownWrapper>
       <CountDownContent>
-        <CountDownTitle>July 11 2023</CountDownTitle>
+        <CountDownTitle>July 11 {targetDate.getFullYear()}</CountDownTitle>
         <TimerRow>
           <CountDownValue value={days} caption="Days" />
           <CountDownValue value={hours} caption="Hours" />
