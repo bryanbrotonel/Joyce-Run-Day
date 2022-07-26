@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import GearImage from './GearImage';
 
 const GearContainer = styled.div`
-  padding: 10rem 0;
+  margin-bottom: 10rem;
   text-align: center;
 `;
 

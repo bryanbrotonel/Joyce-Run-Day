@@ -32,7 +32,7 @@ const FooterContent = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: center;
-    gap: 10em;
+    gap: 10rem;
   }
 `;
 
