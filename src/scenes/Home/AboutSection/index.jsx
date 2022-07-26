@@ -48,17 +48,56 @@ const AboutImageWrapper = styled.div`
 `;
 
 function AboutSection() {
+  var todaysDate = new Date();
+  var targetDate = new Date(`Jul 11, ${todaysDate.getFullYear()}`); // Set target date to current year
+
+  // If current date is past target date of current year, set target to next year
+  if (todaysDate > targetDate) {
+    targetDate.setFullYear(todaysDate.getFullYear() + 1);
+  }
+
+  var formattedTargetDate = targetDate.toLocaleDateString('en-us', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
+  // Get current race year and set ordinal indicator
+  var raceYear = targetDate.getFullYear() - todaysDate.getFullYear();
+  if (raceYear > 10 && raceYear < 14) {
+    raceYear += 'th';
+  } else {
+    switch (raceYear) {
+      case 1:
+        raceYear += 'st';
+        break;
+
+      case 2:
+        raceYear += 'nd';
+        break;
+
+      case 3:
+        raceYear += 'rd';
+        break;
+
+      default:
+        raceYear += 'th';
+        break;
+    }
+  }
+
   return (
     <div className="container">
       <AboutContainer>
         <AboutContentWrapper>
           <div>
-            <AboutTitle>1st Annual Joyce Run Day</AboutTitle>
+            <AboutTitle>{raceYear} Annual Joyce Run Day</AboutTitle>
             <AboutParagraph>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-              recusandae vero veritatis odio alias iusto blanditiis error
-              dignissimos obcaecati enim magnam minima ullam, delectus
-              aspernatur veniam vitae adipisci ipsa unde!
+              Join us for the {raceYear} running of Joyce Run Day on&#160;
+              {formattedTargetDate}. Participants will set out on our various
+              courses to not only accomplish a personal goal but also support
+              RUNVAN&#174;'s mission to foster the growth of healthy, active
+              communities in British Columbia and across Canada. Join us!
             </AboutParagraph>
           </div>
         </AboutContentWrapper>

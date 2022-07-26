@@ -39,29 +39,18 @@ const TimerRow = styled.div`
 
 function CountDown() {
   var todaysDate = new Date();
-  var targetDate = new Date('Jul 11, 1998'); // Set target date
+  var targetDate = new Date(`Jul 11, ${todaysDate.getFullYear()}`); // Set target date to current year
 
-  if (
-    todaysDate.getMonth() <= targetDate.getMonth() &&
-    todaysDate.getDate() < targetDate.getDate()
-  ) {
-    targetDate.setFullYear(todaysDate.getFullYear()); // Set target year to current year
-  } else {
-    targetDate.setFullYear(todaysDate.getFullYear() + 1); // Set target year to next year
+  // If current date is past target date of current year, set target to next year
+  if (todaysDate > targetDate) {
+    targetDate.setFullYear(todaysDate.getFullYear() + 1);
   }
+
   var countDownDate = targetDate.getTime(); // Get target time
 
   const [countDown, setCountDown] = useState(
     countDownDate - todaysDate.getTime()
   );
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCountDown(countDownDate - new Date().getTime());
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [countDownDate]);
 
   // Get respsective time values
   var days = Math.floor(countDown / (1000 * 60 * 60 * 24));
@@ -70,6 +59,14 @@ function CountDown() {
   );
   var minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((countDown % (1000 * 60)) / 1000);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCountDown(countDownDate - new Date().getTime());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [countDownDate]);
 
   return (
     <CountDownWrapper>

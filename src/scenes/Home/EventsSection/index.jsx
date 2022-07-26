@@ -10,6 +10,7 @@ const EventsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5em;
+  color: var(--colour-darkGrey);
 
   @media (min-width: 768px) {
     flex-direction: row;
