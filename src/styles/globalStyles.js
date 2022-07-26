@@ -30,6 +30,7 @@ const GlobalStyle = createGlobalStyle`
     // Colours
     --colour-primary: #F48C06;
     --colour-light: #FBC174;
+    --colour-dark: #DB7E06;
 
     --colour-white: #FFFFFF;
     --colour-black: #0C120C;

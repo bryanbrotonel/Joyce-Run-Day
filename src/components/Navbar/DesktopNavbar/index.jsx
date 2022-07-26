@@ -34,10 +34,6 @@ const Link = styled(NavLink)`
     font-family: var(--font-primary);
     font-size: var(--text-lg);
   }
-
-  &:hover {
-    opacity: 0.6;
-  }
 `;
 
 const RegisterButton = styled.button`
@@ -49,6 +45,10 @@ const RegisterButton = styled.button`
   border: none;
   border-radius: 0.5rem;
   padding: 0.5em 1em;
+
+  &:hover {
+    background-color: var(--colour-dark);
+  }
 `;
 
 function DesktopNavbar(props) {

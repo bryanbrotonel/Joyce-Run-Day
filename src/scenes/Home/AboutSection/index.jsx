@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const AboutContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 4rem;
 
   align-items: center;
@@ -44,6 +44,25 @@ const AboutImageWrapper = styled.div`
   @media (min-width: 768px) {
     flex-grow: 1;
     flex-basis: 600px;
+  }
+`;
+
+const AboutButton = styled.button`
+  display: inline-block;
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
+
+  font-size: inherit;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 2rem;
+
+  &:hover {
+    background-color: var(--colour-dark);
   }
 `;
 
@@ -99,6 +118,9 @@ function AboutSection() {
               RUNVAN&#174;'s mission to foster the growth of healthy, active
               communities in British Columbia and across Canada. Join us!
             </AboutParagraph>
+            <AboutButton as="a" href="https://runvan.org/give" target="_blank">
+              About RUNVAN&#174;
+            </AboutButton>
           </div>
         </AboutContentWrapper>
         <AboutImageWrapper>
