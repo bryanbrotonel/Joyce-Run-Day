@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
@@ -32,50 +32,49 @@ const Icon = styled(FontAwesomeIcon)`
   margin-left: auto;
 `;
 
-const NavLinkWrapper = styled.ul`
-  margin-bottom: 50px;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-
-  & > li {
-    margin-bottom: 1.5rem;
-  }
+const NavLinkWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
 `;
 
-const Link = styled(NavLink)`
+const Link = styled(HashLink)`
+  display: inline-block;
+
   font-family: var(--font-secondary);
   font-size: var(--text-xl);
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--colour-white);
+
+  &:nth-last-of-type(1) {
+    color: var(--colour-primary);
+  }
 `;
 
 const Footer = styled.div`
-  margin-top: 100px;
+  margin-top: 3rem;
 `;
 
 const FooterTitle = styled.h3`
   margin-bottom: 0.5rem;
-`
+`;
 const FooterSubtitle = styled.p`
   margin: 0;
-`
-
-const RegisterButton = styled.button`
-  background-color: var(--colour-primary);
-  color: var(--colour-white);
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.5em 1em;
 `;
 
 function NavMenu(props) {
   const links = props.links;
-  
+
   // Rename link name
   links[0][1] = 'Home';
+
+  const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -100;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+  };
 
   return (
     <Menu display={props.display}>
@@ -89,11 +88,14 @@ function NavMenu(props) {
             const linkName = link[1];
 
             return (
-              <li key={linkName}>
-                <Link to={linkPath} onClick={() => props.toggleMenu(false)}>
-                  {linkName}
-                </Link>
-              </li>
+              <Link
+                key={linkName}
+                to={linkPath}
+                onClick={() => props.toggleMenu(false)}
+                scroll={(el) => scrollWithOffset(el)}
+              >
+                {linkName}
+              </Link>
             );
           })}
         </NavLinkWrapper>

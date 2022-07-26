@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 
 const NavWrapper = styled.div`
@@ -19,7 +19,7 @@ const PagesWrapper = styled.div`
   gap: 4rem;
 `;
 
-const Link = styled(NavLink)`
+const Link = styled(HashLink)`
   text-decoration: none;
   align-self: center;
 
@@ -46,6 +46,7 @@ const RegisterButton = styled.button`
   border-radius: 0.5rem;
   padding: 0.5em 1em;
 
+  cursor: pointer;
   &:hover {
     background-color: var(--colour-dark);
   }
@@ -54,19 +55,29 @@ const RegisterButton = styled.button`
 function DesktopNavbar(props) {
   const { links } = props;
 
-  // Remove home page link and assign to variable
-  const home = links.shift();
+  // Remove  home page link and assign to variable
+  const homeLink = links.shift();
 
   // Remove register page and assign to variable
-  const register = links.pop();
+  const registerLink = links.pop();
 
   // Remaining pages
   const pages = links;
 
+  const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -200;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+  };
+
   return (
     <NavWrapper className="container">
-      <Link to={home[0]} className="homeLink">
-        {home[1]}
+      <Link
+        to="#top"
+        className="homeLink"
+        scroll={(el) => scrollWithOffset(el)}
+      >
+        {homeLink[1]}
       </Link>
       <PagesWrapper>
         {pages.map((link) => {
@@ -74,13 +85,17 @@ function DesktopNavbar(props) {
           const linkName = link[1];
 
           return (
-            <Link key={linkName} to={linkPath}>
+            <Link
+              key={linkName}
+              to={linkPath}
+              scroll={(el) => scrollWithOffset(el)}
+            >
               {linkName}
             </Link>
           );
         })}
-        <Link to={register[0]}>
-          <RegisterButton>{register[1]}</RegisterButton>
+        <Link to={registerLink[0]} scroll={(el) => scrollWithOffset(el)}>
+          <RegisterButton>{registerLink[1]}</RegisterButton>
         </Link>
       </PagesWrapper>
     </NavWrapper>

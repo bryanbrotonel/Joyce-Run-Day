@@ -105,7 +105,7 @@ function EventsSection() {
   }
 
   return (
-    <EventsWrapper>
+    <EventsWrapper id="events">
       <EventsTitle>Events</EventsTitle>
       <EventsContainer className="container">
         <div>

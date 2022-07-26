@@ -57,7 +57,7 @@ const RegisterButton = styled.button`
 
 function RegisterSection() {
   return (
-    <RegisterSectionBackground>
+    <RegisterSectionBackground id="register">
       <RegisterSectionWrapper className="container">
         <RegisterSectionContainer>
           <ContentWrapper>

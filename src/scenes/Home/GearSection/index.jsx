@@ -27,7 +27,7 @@ const GearRowContainer = styled.div`
 
 function GearSection() {
   return (
-    <GearContainer className="container">
+    <GearContainer id="gear" className="container">
       <div>
         <GearTitle>Finish In Style</GearTitle>
       </div>

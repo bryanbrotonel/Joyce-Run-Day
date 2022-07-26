@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import NavMenu from './NavMenu';
-import { NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +14,7 @@ const NavbarContainer = styled.div`
   align-items: center;
 `;
 
-const Link = styled(NavLink)`
+const Link = styled(HashLink)`
   text-decoration: none;
   font-weight: bold;
   color: var(--colour-black);
@@ -40,7 +40,7 @@ function MobileNavbar(props) {
   return (
     <React.Fragment>
       <NavbarContainer className="container">
-        <Link to="/">
+        <Link to="#top">
           <Title>Joyce Run Day</Title>
         </Link>
         <FontAwesomeIcon

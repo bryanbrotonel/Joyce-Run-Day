@@ -106,7 +106,7 @@ function AboutSection() {
   }
 
   return (
-    <div className="container">
+    <div id="about" className="container">
       <AboutContainer>
         <AboutContentWrapper>
           <div>
