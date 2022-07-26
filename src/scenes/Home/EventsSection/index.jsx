@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const EventsWrapper = styled.div`
   padding: 3em 0;
-  margin-bottom: 10rem;
+  margin-bottom: 15rem;
   background: var(--colour-lightGrey);
 `;
 
