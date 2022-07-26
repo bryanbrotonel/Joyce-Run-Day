@@ -16,11 +16,13 @@ const PartnersWrapper = styled.div`
   padding: 5rem 0;
 `;
 
-const PartnersTitle = styled.h1`
+const PartnersTitle = styled.span`
+  display: inline-block;
   color: var(--colour-white);
+  font-family: var(--font-primary);
   font-size: var(--text-xxl);
-  margin: 0;
-  margin-bottom: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
 `;
 
 const PartnerLogosWrapper = styled.div`
@@ -41,14 +43,14 @@ const PartnerLogosWrapper = styled.div`
 function PartnersSection() {
   return (
     <PartnersWrapper>
-        <PartnersTitle>Partners</PartnersTitle>
-        <PartnerLogosWrapper>
-          <FontAwesomeIcon icon={faGoogle} />
-          <FontAwesomeIcon icon={faPiedPiperAlt} />
-          <FontAwesomeIcon icon={faApple} />
-          <FontAwesomeIcon icon={faSlack} />
-          <FontAwesomeIcon icon={faYCombinator} />
-        </PartnerLogosWrapper>
+      <PartnersTitle>Partners</PartnersTitle>
+      <PartnerLogosWrapper>
+        <FontAwesomeIcon icon={faGoogle} />
+        <FontAwesomeIcon icon={faPiedPiperAlt} />
+        <FontAwesomeIcon icon={faApple} />
+        <FontAwesomeIcon icon={faSlack} />
+        <FontAwesomeIcon icon={faYCombinator} />
+      </PartnerLogosWrapper>
     </PartnersWrapper>
   );
 }
