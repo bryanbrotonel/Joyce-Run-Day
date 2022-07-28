@@ -6,6 +6,7 @@ const GearImageWrapper = styled.div`
   max-width: 350px;
   height: 350px;
   overflow: hidden;
+  cursor: pointer;
 `;
 
 const ProductImage = styled.img`
@@ -20,13 +21,12 @@ const ProductImage = styled.img`
   }
 `;
 
-function GearImage() {
+function GearImage(props) {
+  const { src, alt } = props;
+
   return (
     <GearImageWrapper>
-      <ProductImage
-        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=100"
-        alt=""
-      />
+      <ProductImage src={src} alt={alt} width="350" height="350" />
     </GearImageWrapper>
   );
 }

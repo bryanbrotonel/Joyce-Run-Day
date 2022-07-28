@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import GearImage from './GearImage';
+
+import JRD_Bottle from '../../../assets/images/JRD_Bottle.png?as=webp';
+import JRD_Hat from '../../../assets/images/JRD_Hat.png?as=webp';
+import JRD_Shirt from '../../../assets/images/JRD_Shirt.png?as=webp';
 
 const GearContainer = styled.div`
   margin-bottom: 15rem;
@@ -9,7 +12,7 @@ const GearContainer = styled.div`
 `;
 
 const GearTitle = styled.h1`
-  font-size: var(--text-xl);
+  font-size: var(--text-xxl);
   margin: 0;
   margin-bottom: 5rem;
 `;
@@ -32,9 +35,9 @@ function GearSection() {
         <GearTitle>Finish In Style</GearTitle>
       </div>
       <GearRowContainer>
-        <GearImage></GearImage>
-        <GearImage></GearImage>
-        <GearImage></GearImage>
+        <GearImage src={JRD_Hat} alt="Joyce Run Day Hat"></GearImage>
+        <GearImage src={JRD_Shirt} alt="Joyce Run Day Shirt"></GearImage>
+        <GearImage src={JRD_Bottle} alt="Joyce Run Day Bottle"></GearImage>
       </GearRowContainer>
     </GearContainer>
   );
