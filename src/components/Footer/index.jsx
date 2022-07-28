@@ -58,6 +58,8 @@ const FooterLinks = styled.ul`
   padding: 0;
   margin: 0;
 
+  cursor: pointer;
+
   li:hover {
     opacity: 0.6;
   }
@@ -66,6 +68,8 @@ const FooterLinks = styled.ul`
 const SocialLinks = styled.div`
   display: flex;
   gap: 1em;
+
+  cursor: pointer;
 
   svg:hover {
     opacity: 0.6;

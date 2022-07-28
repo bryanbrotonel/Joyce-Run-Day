@@ -29,6 +29,10 @@ const Link = styled(HashLink)`
 
   transition: 0.2s;
 
+  &:hover {
+    color: var(--colour-primary)
+  }
+
   &.homeLink {
     color: var(--colour-primary);
     font-family: var(--font-primary);

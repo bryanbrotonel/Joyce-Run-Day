@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
 
     // font family
-    --font-primary: 'PT Serif', serif;
+    --font-primary: 'Merriweather', serif;
     --font-secondary: 'Roboto', sans-serif;
 
     // font size

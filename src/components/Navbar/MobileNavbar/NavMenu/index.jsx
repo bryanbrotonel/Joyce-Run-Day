@@ -67,8 +67,10 @@ const FooterSubtitle = styled.p`
 function NavMenu(props) {
   const links = props.links;
 
-  // Rename link name
+  // Configure home link
+  links[0][0] = '#top';
   links[0][1] = 'Home';
+
 
   const scrollWithOffset = (el) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
