@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import RegisterBackground from '../../../assets/images/RegisterBackground.png?as=webp';
+import Toast from '../../../components/Toast';
 
 const RegisterSectionBackground = styled.div`
   background: url(${RegisterBackground}) no-repeat center center;
@@ -11,7 +12,7 @@ const RegisterSectionBackground = styled.div`
 
   /* Shadow overlay over image: #0C120C in RGB */
   box-shadow: inset 0 0 0 2000px rgba(5, 7, 5, 0.7);
-  
+
   padding: 10rem 0;
 `;
 
@@ -65,6 +66,16 @@ const RegisterButton = styled.button`
 `;
 
 function RegisterSection() {
+  const [toastVisible, setToastVisible] = useState(false);
+
+  useEffect(() => {
+    if (toastVisible) {
+      setTimeout(function () {
+        setToastVisible(false);
+      }, 3000);
+    }
+  }, [toastVisible]);
+
   return (
     <RegisterSectionBackground id="register">
       <RegisterSectionWrapper className="container">
@@ -76,11 +87,14 @@ function RegisterSection() {
               laborum nulla voluptatibus blanditiis neque qui.
             </span>
             <div>
-              <RegisterButton>Register</RegisterButton>
+              <RegisterButton onClick={() => setToastVisible(true)}>
+                Register
+              </RegisterButton>
             </div>
           </ContentWrapper>
         </RegisterSectionContainer>
       </RegisterSectionWrapper>
+      <Toast message={'Registration opening soon!'} display={+toastVisible} />
     </RegisterSectionBackground>
   );
 }
