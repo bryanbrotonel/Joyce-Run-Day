@@ -1,8 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import RegisterBackground from '../../../assets/images/RegisterBackground.png?as=webp';
 
 const RegisterSectionBackground = styled.div`
-  background: var(--colour-black);
+  background: url(${RegisterBackground}) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  /* Shadow overlay over image: #0C120C in RGB */
+  box-shadow: inset 0 0 0 2000px rgba(5, 7, 5, 0.7);
+  
   padding: 10rem 0;
 `;
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import AboutPicture from '../../../assets/images/AboutImage.png?as=webp';
 
 const AboutContainer = styled.div`
   display: flex;
@@ -28,9 +29,6 @@ const AboutImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
 `;
 
 const AboutContentWrapper = styled.div`
@@ -124,10 +122,7 @@ function AboutSection() {
           </div>
         </AboutContentWrapper>
         <AboutImageWrapper>
-          <AboutImage
-            src="https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=100"
-            alt=""
-          />
+          <AboutImage src={AboutPicture} alt="Joyce Run Day - About Image" />
         </AboutImageWrapper>
       </AboutContainer>
     </div>

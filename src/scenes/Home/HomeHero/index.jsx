@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import HeroBackground from '../../../assets/images/HeroBackground.png?as=webp';
 
 const HeroContainer = styled.div`
   width: 100%;
@@ -9,11 +10,16 @@ const HeroContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  background: var(--colour-black);
-  color: var(--colour-white);
-`;
+  background: url(${HeroBackground}) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-const HeroContent = styled.div`
+  /* Shadow overlay over image: #0C120C in RGB */
+  box-shadow: inset 0 0 0 2000px rgba(5, 7, 5, 0.7);
+
+  color: var(--colour-white);
 `;
 
 const HeroTitle = styled.h1`
@@ -30,10 +36,10 @@ const HeroSubtitle = styled.h2`
 function HomeHero() {
   return (
     <HeroContainer>
-      <HeroContent className="container">
+      <div className="container">
         <HeroTitle>Run For Their Lives</HeroTitle>
         <HeroSubtitle>5K, 10K, Half Marathon</HeroSubtitle>
-      </HeroContent>
+      </div>
     </HeroContainer>
   );
 }
