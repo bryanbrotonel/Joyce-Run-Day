@@ -1,5 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+
+import Brotonel10KTrack from '../../../assets/images/Brotonel10KTrack.png?as=webp';
+import Danielle5KTrack from '../../../assets/images/Danielle5KTrack.png?as=webp';
+import HalfMarathonTrack from '../../../assets/images/HalfMarathonTrack.png?as=webp';
 
 const EventsWrapper = styled.div`
   padding: 3em 0;
@@ -15,13 +19,14 @@ const EventsContainer = styled.div`
   color: var(--colour-darkGrey);
 
   @media (min-width: 768px) {
-    gap: 5em;
+    gap: 10em;
     flex-direction: row;
+    justify-content: center;
   }
 `;
 
 const EventsTitle = styled.h1`
-  font-size: var(--text-xl);
+  font-size: var(--text-xxl);
   margin: 0;
   margin-bottom: 5rem;
   text-align: center;
@@ -59,14 +64,28 @@ const RaceTitle = styled.span`
   }
 `;
 
+const RaceParagraphWrapper = styled.div`
+  width: 100%;
+  max-width: 500px;
+`;
+
+const RaceTrackWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  max-width: 300px;
+  text-align: center;
+`;
+
 const RaceHeader = styled.h2`
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   color: var(--colour-primary);
 `;
 
 function EventsSection() {
   const [currentRace, setCurrentRace] = useState('Danielle 5K');
   var raceParagraph = <p></p>;
+  var raceTrack;
 
   switch (currentRace) {
     case 'Danielle 5K':
@@ -78,6 +97,7 @@ function EventsSection() {
           iusto, veritatis molestias!
         </p>
       );
+      raceTrack = Danielle5KTrack;
       break;
     case 'Brotonel 10K':
       raceParagraph = (
@@ -88,6 +108,7 @@ function EventsSection() {
           repellendus nulla. Ipsa, tempore eligendi.
         </p>
       );
+      raceTrack = Brotonel10KTrack;
       break;
     case 'Joyce Half Marathon':
       raceParagraph = (
@@ -98,6 +119,7 @@ function EventsSection() {
           Blanditiis nesciunt sed vero.
         </p>
       );
+      raceTrack = HalfMarathonTrack;
       break;
     default:
       <p></p>;
@@ -108,18 +130,13 @@ function EventsSection() {
     <EventsWrapper id="events">
       <EventsTitle>Events</EventsTitle>
       <EventsContainer className="container">
-        <div>
+        <RaceParagraphWrapper>
           <RaceHeader>{currentRace}</RaceHeader>
           {raceParagraph}
-        </div>
-        <div>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
-            tempore debitis dicta sapiente at, veniam iusto consectetur,
-            aperiam, eius quaerat consequuntur facere. Commodi doloremque nobis
-            est eum iusto, veritatis molestias!
-          </p>
-        </div>
+        </RaceParagraphWrapper>
+        <RaceTrackWrapper>
+          <img src={raceTrack} alt={currentRace} width="300" height="300"/>
+        </RaceTrackWrapper>
       </EventsContainer>
       <RaceList>
         <RaceTitle
