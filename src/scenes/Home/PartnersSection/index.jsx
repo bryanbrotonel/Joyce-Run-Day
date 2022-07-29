@@ -48,34 +48,52 @@ function PartnersSection() {
       <PartnersTitle>Partners</PartnersTitle>
       <PartnerLogosWrapper>
         <div>
-          <PartnerLogo src={PartnerLogoBC} alt="Partner Logo - BC" />
+          <PartnerLogo
+            src={PartnerLogoBC}
+            alt="Partner Logo - BC"
+            height="32"
+            width="120"
+          />
         </div>
         <div>
           <PartnerLogo
             src={PartnerLogoVictory}
             alt="Partner Logo - Victory Co"
+            height="32"
+            width="66"
           />
         </div>
         <div>
           <PartnerLogo
             src={PartnerLogoReigningChamp}
             alt="Partner Logo - Reigning Champ"
+            height="32"
+            width="37"
           />
         </div>
         <div>
           <PartnerLogo
             src={PartnerLogoVanRunCo}
             alt="Partner Logo - Vancouver Running Company"
+            height="32"
+            width="118"
           />
         </div>
         <div>
           <PartnerLogo
             src={PartnerLogoRunForHope}
             alt="Partner Logo - Run 4 Hope"
+            height="32"
+            width="80"
           />
         </div>
         <div>
-          <PartnerLogo src={PartnerLogoRunVan} alt="Partner Logo - Run Van" />
+          <PartnerLogo
+            src={PartnerLogoRunVan}
+            alt="Partner Logo - Run Van"
+            height="32"
+            width="113"
+          />
         </div>
       </PartnerLogosWrapper>
     </PartnersWrapper>

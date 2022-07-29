@@ -6,15 +6,16 @@ const LoadingContainer = styled.div`
   padding: 50px 0;
 
   text-align: center;
-  font-size: var(--text-lg);
+  font-size: var(--text-xxl);
   font-weight: bold;
   font-family: var(--font-primary);
+  color: var(--colour-primary);
 `;
 
 function Loading() {
   return (
     <LoadingContainer>
-      <span>NewNew</span>
+      <span>Joyce Run Day</span>
     </LoadingContainer>
   );
 }
