@@ -91,10 +91,10 @@ function EventsSection() {
     case 'Danielle 5K':
       raceParagraph = (
         <p>
-          Danielle 5K, ipsum dolor sit amet consectetur adipisicing elit. Quod
-          tempore debitis dicta sapiente at, veniam iusto consectetur, aperiam,
-          eius quaerat consequuntur facere. Commodi doloremque nobis est eum
-          iusto, veritatis molestias!
+          The Danielle 5K is a scenic route around the Joyce neighbourhood
+          dedicated to Danielle and her love for running. This route visits the
+          local business that brings the community together, crossing the finish
+          line at Danielle&#x27;s favourite local bubble tea stop.
         </p>
       );
       raceTrack = Danielle5KTrack;
@@ -102,10 +102,10 @@ function EventsSection() {
     case 'Brotonel 10K':
       raceParagraph = (
         <p>
-          Brotonel 10K, ipsum dolor sit amet consectetur adipisicing elit.
-          Distinctio veniam culpa inventore nihil cum porro eveniet, fugiat
-          soluta. Libero ducimus nesciunt cum magni repudiandae dolore
-          repellendus nulla. Ipsa, tempore eligendi.
+          Dedicated to the family that started it all, the Brotonel 10K explores
+          the beautiful community that Joyce is. This 10K route takes a trip
+          around the Joyce area leaving no area unvisited. Say hello to the
+          friendly neighbours as they will become familiar faces.
         </p>
       );
       raceTrack = Brotonel10KTrack;
@@ -113,10 +113,10 @@ function EventsSection() {
     case 'Joyce Half Marathon':
       raceParagraph = (
         <p>
-          Joyce Half Marathon, ipsum dolor sit amet consectetur adipisicing
-          elit. Quas earum accusamus, quae amet dolores voluptas nemo commodi,
-          autem deleniti modi repudiandae cum nesciunt hic aspernatur iste!
-          Blanditiis nesciunt sed vero.
+          The Joyce Half Marathon starts and ends at the heart of Joyce, but
+          takes an adventure through Vancouver in between. This half marathon
+          explores the two sides of Vancouver - in moments runners are
+          surrounded by tall skyscrapers to getting lost in the forest.
         </p>
       );
       raceTrack = HalfMarathonTrack;

@@ -83,12 +83,13 @@ function RegisterSection() {
           <ContentWrapper>
             <RegisterTitle>Take Your Mark</RegisterTitle>
             <span>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore
-              laborum nulla voluptatibus blanditiis neque qui.
+              Join hundreds of runners in celebrating the joy of running and
+              staying active in our communities. We also have goodies at the
+              finish line.
             </span>
             <div>
               <RegisterButton onClick={() => setToastVisible(true)}>
-                Register
+                Register Now
               </RegisterButton>
             </div>
           </ContentWrapper>

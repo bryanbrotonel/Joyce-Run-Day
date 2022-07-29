@@ -27,17 +27,22 @@ const HeroTitle = styled.h1`
 
   margin: 0;
 `;
+
 const HeroSubtitle = styled.h2`
   font-size: var(--text-xl);
   font-family: var(--font-secondary);
   margin: 0;
 `;
 
+const TextEmphasis = styled.span`
+  color: var(--colour-primary);
+`
+
 function HomeHero() {
   return (
     <HeroContainer>
       <div className="container">
-        <HeroTitle>Run For Their Lives</HeroTitle>
+        <HeroTitle>Running For <TextEmphasis>Their</TextEmphasis> Lives</HeroTitle>
         <HeroSubtitle>5K, 10K, Half Marathon</HeroSubtitle>
       </div>
     </HeroContainer>
