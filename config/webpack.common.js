@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 const APP_DIR = path.resolve(__dirname, '../src');
@@ -39,7 +40,6 @@ module.exports = {
       title: 'Joyce Run Day',
       template: './resources/index.html',
       filename: './index.html',
-      favicon: './src/static/assets/images/favicon.svg',
       inject: true,
       minify: {
         collapseWhitespace: true,
@@ -51,6 +51,7 @@ module.exports = {
         removeRedundantAttributes: true,
       },
     }),
+    new FaviconsWebpackPlugin('./src/static/assets/images/favicon.png'),
     new Dotenv(),
   ],
   output: {
