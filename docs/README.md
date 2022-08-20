@@ -4,9 +4,9 @@ Homepage for Joyce Run Day.
 
 ## Built With
 
+- [Typescript](https://typescriptlang.org/)
 - [React](https://reactjs.org/)
 - [Webpack](https://webpack.js.org/)
-- [Babel](https://babeljs.io/)
 - [npm](https://www.npmjs.com/)
 
 ## Docs

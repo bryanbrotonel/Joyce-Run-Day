@@ -19,7 +19,7 @@ const TimerCaption = styled.span`
   font-size: var(--text-md);
 `;
 
-function CountDownValue(props) {
+function CountDownValue(props: {value: number, caption: string}) {
   const { value, caption } = props;
 
   return (

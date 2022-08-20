@@ -121,11 +121,11 @@ function Footer() {
         <div>
           <FooterSubtitle>Follow Us</FooterSubtitle>
           <SocialLinks>
-            <FontAwesomeIcon icon={faInstagram} size="xl" />
-            <FontAwesomeIcon icon={faTwitter} size="xl" />
-            <FontAwesomeIcon icon={faFacebook} size="xl" />
-            <FontAwesomeIcon icon={faYoutube} size="xl" />
-            <FontAwesomeIcon icon={faTiktok} size="xl" />
+            <FontAwesomeIcon icon={faInstagram} size="lg" />
+            <FontAwesomeIcon icon={faTwitter} size="lg" />
+            <FontAwesomeIcon icon={faFacebook} size="lg" />
+            <FontAwesomeIcon icon={faYoutube} size="lg" />
+            <FontAwesomeIcon icon={faTiktok} size="lg" />
           </SocialLinks>
         </div>
       </FooterContent>

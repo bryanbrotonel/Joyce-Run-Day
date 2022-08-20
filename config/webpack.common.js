@@ -10,27 +10,29 @@ module.exports = {
     usedExports: true,
   },
   entry: {
-    app: './src/index.js',
+    app: './src/index.tsx',
   },
   resolve: {
     modules: [APP_DIR, 'node_modules'],
-    extensions: ['.js', '.jsx'],
+    extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
     rules: [
       {
-        test: /\.js|\.jsx$/,
+        test: /\.(tsx|ts|js)?$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        loader: 'ts-loader',
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
     ],

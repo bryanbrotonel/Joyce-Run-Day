@@ -80,37 +80,42 @@ function AboutSection() {
   });
 
   // Get current race year and set ordinal indicator
+  var raceYearString;
+  var ordinal;
   var raceYear = targetDate.getFullYear() - todaysDate.getFullYear();
   if (raceYear > 10 && raceYear < 14) {
-    raceYear += 'th';
+
+    ordinal = 'th';
   } else {
     switch (raceYear) {
       case 1:
-        raceYear += 'st';
+        ordinal = 'st';
         break;
 
       case 2:
-        raceYear += 'nd';
+        ordinal = 'nd';
         break;
 
       case 3:
-        raceYear += 'rd';
+        ordinal = 'rd';
         break;
 
       default:
-        raceYear += 'th';
+        ordinal = 'th';
         break;
     }
   }
+
+  raceYearString = `${raceYear}${ordinal}`;
 
   return (
     <div id="about" className="container">
       <AboutContainer>
         <AboutContentWrapper>
           <div>
-            <AboutTitle>{raceYear} Annual Joyce Run Day</AboutTitle>
+            <AboutTitle>{raceYearString} Annual Joyce Run Day</AboutTitle>
             <AboutParagraph>
-              Join us for the {raceYear} running of Joyce Run Day on&#160;
+              Join us for the {raceYearString} running of Joyce Run Day on&#160;
               {formattedTargetDate}. Participants will set out on our various
               courses to not only accomplish a personal goal but also support
               RUNVAN&#174;'s mission to foster the growth of healthy, active
