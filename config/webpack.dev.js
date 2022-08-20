@@ -7,5 +7,8 @@ module.exports = merge(common, {
   devServer: {
     static: './dist',
     historyApiFallback: true,
+    open: true,
+    hot: true,
+    liveReload: true,
   },
 });

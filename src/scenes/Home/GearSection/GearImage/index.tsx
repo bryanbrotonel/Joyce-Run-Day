@@ -24,7 +24,7 @@ const ProductImage = styled.img`
   }
 `;
 
-function GearImage(props) {
+function GearImage(props: {src: string, alt: string}) {
   const { src, alt } = props;
 
   const [toastVisible, setToastVisible] = useState(false);
@@ -42,7 +42,7 @@ function GearImage(props) {
       <GearImageWrapper onClick={() => setToastVisible(true)}>
         <ProductImage src={src} alt={alt} width="350" height="350" />
       </GearImageWrapper>
-      <Toast message={'Gear coming soon!'} display={+toastVisible} />
+      <Toast message={'Gear coming soon!'} display={toastVisible} />
     </React.Fragment>
   );
 }

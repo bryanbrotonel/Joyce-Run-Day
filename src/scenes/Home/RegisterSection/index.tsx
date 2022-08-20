@@ -95,7 +95,7 @@ function RegisterSection() {
           </ContentWrapper>
         </RegisterSectionContainer>
       </RegisterSectionWrapper>
-      <Toast message={'Registration opening soon!'} display={+toastVisible} />
+      <Toast message={'Registration opening soon!'} display={toastVisible} />
     </RegisterSectionBackground>
   );
 }

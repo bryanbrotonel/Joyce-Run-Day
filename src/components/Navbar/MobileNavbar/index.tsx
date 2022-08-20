@@ -26,7 +26,7 @@ const Title = styled.h3`
   text-decoration: none;
 `;
 
-function MobileNavbar(props) {
+function MobileNavbar(props: {links: string[][]}) {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ function MobileNavbar(props) {
       </NavbarContainer>
       <NavMenu
         links={props.links}
-        display={+toggleMenu}
+        display={toggleMenu}
         toggleMenu={setToggleMenu}
       />
     </React.Fragment>

@@ -6,6 +6,8 @@ import NavRoutes from '../../navRoutes';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
+import {} from 'styled-components/cssprop';
+
 const Container = styled.section`
   min-height: 100%;
   display: grid;

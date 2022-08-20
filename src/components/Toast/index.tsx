@@ -27,7 +27,11 @@ const fadeOutDown = keyframes`
     }
 `;
 
-const ToastContainer = styled.div`
+interface ToastContainerProps {
+  readonly $display: boolean;
+}
+
+const ToastContainer = styled.div<ToastContainerProps>`
   min-width: 250px;
   margin-left: -137px;
   text-align: center;
@@ -42,16 +46,17 @@ const ToastContainer = styled.div`
   border-radius: 1rem;
   box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
 
-  visibility: ${(props) => (props.display ? 'visible' : 'hidden')};
-  animation: ${(props) => (props.display ? fadeInUp : fadeOutDown)} 0.5s ease-out;
+  visibility: ${(props) => (props.$display ? 'visible' : 'hidden')};
+  animation: ${(props) => (props.$display ? fadeInUp : fadeOutDown)} 0.5s
+    ease-out;
   transition: visibility 0.5s ease-out;
 `;
 
-function Toast(props) {
+function Toast(props: {message: string, display: boolean}) {
   const { message, display } = props;
 
   return (
-    <ToastContainer display={display}>
+    <ToastContainer $display={display}>
       <div>
         <span>{message}</span>
       </div>

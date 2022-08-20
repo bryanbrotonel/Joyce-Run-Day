@@ -30,7 +30,7 @@ const Link = styled(HashLink)`
   transition: 0.2s;
 
   &:hover {
-    color: var(--colour-primary)
+    color: var(--colour-primary);
   }
 
   &.homeLink {
@@ -56,7 +56,7 @@ const RegisterButton = styled.button`
   }
 `;
 
-function DesktopNavbar(props) {
+function DesktopNavbar(props: { links: string[][] }) {
   const { links } = props;
 
   // Remove  home page link and assign to variable
@@ -68,7 +68,7 @@ function DesktopNavbar(props) {
   // Remaining pages
   const pages = links;
 
-  const scrollWithOffset = (el) => {
+  const scrollWithOffset = (el: Element) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     const yOffset = -200;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
