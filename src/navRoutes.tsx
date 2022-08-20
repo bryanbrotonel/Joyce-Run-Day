@@ -1,8 +1,7 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Loading from './components/Loading';
-
-const Home = lazy(() => import('./scenes/Home'));
+import Home from './scenes/Home';
 
 const NavRoutes = () => (
   <Routes>

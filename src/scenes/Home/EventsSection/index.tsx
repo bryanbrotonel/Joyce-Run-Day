@@ -47,7 +47,12 @@ const RaceList = styled.div`
   }
 `;
 
-const RaceTitle = styled.span`
+interface RaceTitleProps {
+  current: boolean;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+const RaceTitle = styled.span<RaceTitleProps>`
   display: inline-block;
   font-size: var(--text-md);
   font-family: var(--font-secondary);
@@ -87,44 +92,53 @@ function EventsSection() {
   var raceParagraph = <p></p>;
   var raceTrack;
 
+  var races = [
+    {
+      title: 'Danielle 5K',
+      description:
+        'The Danielle 5K is a scenic route around the Joyce neighbourhood dedicated to Danielle and her love for running. This route visits the local business that brings the community together, crossing the finish line at Danielle&#x27;s favourite local bubble tea stop.',
+    },
+
+    {
+      title: 'Brotonel 10K',
+      description:
+        'Dedicated to the family that started it all, the Brotonel 10K explores the beautiful community that Joyce is. This 10K route takes a trip around the Joyce area leaving no area unvisited. Say hello to the friendly neighbours as they will become familiar faces.',
+    },
+
+    {
+      title: 'Joyce Half Marathon',
+      description:
+        'The Joyce Half Marathon starts and ends at the heart of Joyce, takes an adventure through Vancouver in between. This half marathon explores the two sides of Vancouver - in moments runners are surrounded by tall skyscrapers to getting lost in the forest.',
+    },
+  ];
+
   switch (currentRace) {
-    case 'Danielle 5K':
-      raceParagraph = (
-        <p>
-          The Danielle 5K is a scenic route around the Joyce neighbourhood
-          dedicated to Danielle and her love for running. This route visits the
-          local business that brings the community together, crossing the finish
-          line at Danielle&#x27;s favourite local bubble tea stop.
-        </p>
-      );
+    case races[0].title:
+      raceParagraph = <p>{races[0].description}</p>;
       raceTrack = Danielle5KTrack;
       break;
-    case 'Brotonel 10K':
-      raceParagraph = (
-        <p>
-          Dedicated to the family that started it all, the Brotonel 10K explores
-          the beautiful community that Joyce is. This 10K route takes a trip
-          around the Joyce area leaving no area unvisited. Say hello to the
-          friendly neighbours as they will become familiar faces.
-        </p>
-      );
+    case races[1].title:
+      raceParagraph = <p>{races[1].description}</p>;
       raceTrack = Brotonel10KTrack;
       break;
-    case 'Joyce Half Marathon':
-      raceParagraph = (
-        <p>
-          The Joyce Half Marathon starts and ends at the heart of Joyce, but
-          takes an adventure through Vancouver in between. This half marathon
-          explores the two sides of Vancouver - in moments runners are
-          surrounded by tall skyscrapers to getting lost in the forest.
-        </p>
-      );
+    case races[2].title:
+      raceParagraph = <p>{races[2].description}</p>;
       raceTrack = HalfMarathonTrack;
       break;
     default:
       <p></p>;
       break;
   }
+
+  const currentRaceComponent = races.map((races) => (
+    <RaceTitle
+      key={races.title}
+      current={races.title == currentRace}
+      onClick={() => setCurrentRace(races.title)}
+    >
+      {races.title}
+    </RaceTitle>
+  ));
 
   return (
     <EventsWrapper id="events">
@@ -135,35 +149,10 @@ function EventsSection() {
           {raceParagraph}
         </RaceParagraphWrapper>
         <RaceTrackWrapper>
-          <img src={raceTrack} alt={currentRace} width="300" height="300"/>
+          <img src={raceTrack} alt={currentRace} width="300" height="300" />
         </RaceTrackWrapper>
       </EventsContainer>
-      <RaceList>
-        <RaceTitle
-          as="button"
-          value="Danielle 5K"
-          current={'Danielle 5K' == currentRace}
-          onClick={(e) => setCurrentRace(e.target.value)}
-        >
-          Danielle 5K
-        </RaceTitle>
-        <RaceTitle
-          as="button"
-          value="Brotonel 10K"
-          current={'Brotonel 10K' == currentRace}
-          onClick={(e) => setCurrentRace(e.target.value)}
-        >
-          Brotonel 10K
-        </RaceTitle>
-        <RaceTitle
-          as="button"
-          value="Joyce Half Marathon"
-          current={'Joyce Half Marathon' == currentRace}
-          onClick={(e) => setCurrentRace(e.target.value)}
-        >
-          Joyce Half Marathon
-        </RaceTitle>
-      </RaceList>
+      <RaceList>{currentRaceComponent}</RaceList>
     </EventsWrapper>
   );
 }
