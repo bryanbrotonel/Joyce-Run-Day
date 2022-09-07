@@ -4,11 +4,14 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
+    "lib": ["dom", "es6"],
     "module": "es6",
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "esModuleInterop": true
   },
-  "include": ["src", "src/custom.d.ts"]
+  "include": ["src", "src/custom.d.ts", "./jest-setup.ts"],
+  "exclude": ["node_modules"]
 }
